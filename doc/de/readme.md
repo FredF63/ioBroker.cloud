@@ -53,17 +53,14 @@ Beispiel:
 
 - Angenommen, der Aus-Pegel steht auf 30%.
 - Ein virtuelles Gerät "Licht" hat zwei physische Geräte: *Schalter* und *Dimmer*.
-- Mit dem Befehl: "Setze das Licht auf 40%" wird dieser Wert gespeichert für den *Dimmer*, setzt den "Dimmer" auf diesen Wert und schaltet den  *Schalter* ein.
-- Command: "turn the light off". The adapter will set the *dimmer* to 0% and will turn off the *switch*.
-- Command: "turn on the light". *dimmer* => 40%, *switch* => ON.
-- Command: "set the light to 20%". *dimmer* => 20%, *switch* => OFF. The value for dimmer will not be remembered, because it is bellow *OFF level*.
-- Command: "turn on the light". *dimmer* => 40%, *switch* => ON.
-
-### by ON
-You can select the behaviour of ON command will come for the number state. The specific value can be selected or last non zero value will be used.
+- Mit dem Befehl "Setze das Licht auf 40%" wird dieser Wert für den *Dimmer* gespeichert, setzt den "Dimmer" auf diesen Wert und schaltet den *Schalter* ein.
+- Mit dem Befehl "Schalte das Licht aus" wird der *Dimmer* auf 0% gesetzt und der *Schalter* wird ausgeschaltet.
+- Befehl: "Schalte das Licht ein". *Dimmer* => 40%, *Schalter* => Ein.
+- Befehl: "Setze das Licht auf 20%". *Dimmer* => 20%, *Schalter* => Aus. Der Wert für den Dimmer wird nicht gespeichert, da unter dem Aus-Pegel.
+- Befehl: "Schalte das Licht ein". *Dimmer* => 40%, *Schalter* => Ein.
 
 ### Schreibe Antwort ins
-For every command the text response will be generated. You can define here the Object ID , where this text must be written to. E.g. *sayit.0.tts.text*.
+Für jeden Befehl wird die Textantwort generiert. Hier kann die Objekt-ID definiert werdenen, in die dieser Text geschrieben werden muss. Z.B. * sayit.0.tts.text *.
 
 ### Neustart bei Verbindunsabbruch
 Erklärung fehlt
@@ -114,14 +111,13 @@ Alexa, is "lock name" locked/unlocked
 Alexa, lock the "lock name"
 ```
 
-## How names will be generated
-The adapter tries to generate virtual devices for smart home control (e.g. Amazon Alexa or Google Home).
+## Wie Namen generiert werden
+Der Adapter versucht, virtuelle Geräte für die Smart Home-Steuerung zu generieren (z.B. Amazon Alexa oder Google Home).
 
-The are two important enumerations for that: rooms and functions.
+Dafür gibt es zwei wichtige Aufzählungen: Räume und Funktionen.
 
-Rooms are like: living room, bath room, sleeping room.
-Functions are like: light, blind, heating.
-
+Räume sind z.B: Wohnzimmer, Bad, Schlafzimmer.
+Funktionen sind z.B.: Licht, Jalousie, Heizung.
 Following conditions must be met to get the state in the automatically generated list:
 
 - the state must be in some "function" enumeration.
