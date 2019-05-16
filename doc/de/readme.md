@@ -41,7 +41,9 @@ Hier kann ein Wort definiert werden, das zwischen Funktion und Raum platziert wi
 Dies wird jedoch nicht empfohlen, da die Erkennungs-Engine ein weiteres Wort analysieren muss und dies zu Missverständnissen führen kann.
 
 ### Ersetze in Namen
-Erklärung fehlt
+Hier können Zeichenfolgen angeben werden, die automatisch in den Gerätenamen ersetzt werden. 
+
+Beispiel: Bei ```.STATE,.LEVEL``` werden alle ".STATE" und ".LEVEL" aus den Namen gelöscht. Vorsicht mit Leerzeichen, wenn  ```.STATE, .LEVEL``` eingesetzt wird, wird ".STATE" und " .LEVEL"ersetzt und nicht ".LEVEL".
 
 ### Aus-Pegel für Schalter
 Einige Gruppen haben unterschiedliche Geräten: z.B. Dimmer und Schalter. Diese können mit den Befehlen "EIN" und "AUS" oder auch mit Prozentwerten gesteuert werden. Wenn der Befehl "Setze auf 30%" lautet und der Aus-Pegel auf "30%" eingestellt ist, werden die Schalter eingeschaltet. Mit dem Befehl "Setze auf 25%" werden alle Schalter ausgeschaltet die Dimmer werden auf 25% gesetzt, bleiben also an.
@@ -139,15 +141,12 @@ Falls der Wert von *common.smartName* **false** ist, wird der Objektstatus nicht
 Über den Konfigurationsdialog können die einzelnen Objektstati bequem über das + Zeichen zu virtuellen Gruppen oder als einzelnes Gerät hinzufügt werden. Löschen erfolt über den Papierkorb rechts. Ein Smartname kann mit dem Bleistift geändert werden.
 ![Smartgeräte](media/smartgeräte.PNG)
 
-If the group has only one state it can be renamed, as for this the state's smartName will be used.
-If the group has more than one state, the group must be renamed via the enumeration's names.
+Wenn eine Gruppe nur einen Status hat, kann sie umbenannt werden, da hierfür der SmartName des Status verwendet wird.
 
-To create own groups the user can install "scenes" adapter or create "script" in Javascript adapter.
+Wenn die Gruppe mehr als einen Status hat, muss die Gruppe über die Namen der Aufzählung umbenannt werden.
 
-### Replaces
-You can specify strings, that could be automatically replaced in the devices names. E.g if you set replaces to:
-```.STATE,.LEVEL```, so all ".STATE" and ".LEVEL" will be deleted from names. Be careful with spaces.
-If you will set ```.STATE, .LEVEL```, so ".STATE" and " .LEVEL" will be replaced and not ".LEVEL".
+Um eigene Gruppen zu erstellen, kann der "Szenen-Adapter" installieren werden oder ein "Skript" im Javascript-Adapter erstellt werden.
+
 
 ## Helper states
 - **smart.lastObjectID**: This state will be set if only one device was controlled by home skill (alexa, google home).
