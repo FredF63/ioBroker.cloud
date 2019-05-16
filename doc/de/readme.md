@@ -1,22 +1,17 @@
 ![Logo](media/cloud.png)
-# ioBroker cloud adapter
+# ioBroker cloud Adapter
 Dieser Adapter ermöglicht die Verbindung vom Internet über die ioBroker-Cloud zur lokalen Installation von ioBroker.
 
 ## Einstellungen
 ### APP-KEY
-Um den Cloud-Adapter verwenden zu können, muss zunächst eine Anmeldung unter [https://iobroker.net](https://iobroker.net) und der APP-Key dann herunterladen werden.
-
-This is application key that the user can get on [https://iobroker.net](https://iobroker.net) site. Please get the key there and enter it here.
+Um den Cloud-Adapter verwenden zu können, muss zunächst ein Account unter [https://iobroker.net](https://iobroker.net) erstellt werden. Über Edit Profile dann den APP-Key kopieren und hier eintragen.
 
 ![Intro](media/intro.png)
 
 ### Instanz
-Alle Anforderungen vom Cloud-Adapter werden an eine WEB-Instanz weitergeleitet. Der Benutzer muss hier die WEB-Instanz angeben, die dem Benutzer angezeigt wird, wenn er sich auf der Website https://iobroker.net anmeldet.
+Alle Anfragen des Cloud-Adapter werden an eine WEB-Instanz weitergeleitet. Der Benutzer muss hier die WEB-Instanz (meist web.0) angeben, die dem Benutzer angezeigt wird, wenn er sich auf der Website https://iobroker.net anmeldet.
 
 ## Erweiterte Einstellungen
-### Erlaube selbst-signierte Zertifikate
-If you use standard iobroker.net cloud, you can deactivate it. This option is only important if own cloud used.
-
 ### Verbindungs-Timeout(ms)
 Erklärung fehlt
 
@@ -24,20 +19,20 @@ Erklärung fehlt
 Erklärung fehlt
 
 ### Sprache
-If you select "default" language the smart names of devices and of enumerations will not be translated. If some language specified all known names will be translated into this language.
-It is done to switch fast between many languages for demonstration purposes.
+Bei Auswahl der Systemsprache werden die Smart-Namen von Geräten und Aufzählungen nicht übersetzt. Wenn eine Sprache angegeben ist, werden alle bekannten Namen in diese Sprache übersetzt.
+Dies dient zum schnellen wechseln zwischen den Sprachen.
 
 ### Erlaube selbst-signierte Zertifikate
-Erklärung fehlt
+Bei Verwendung der iobroker.net Cloud bleibt dies deaktiviert. Diese Option wird nur bei Verwendung einer eigenen Cloud benötigt.
 
 ### Platziere Funktionsnamen vorne
-Change the order of function and roles in self generated names:
+Hiermit wird die Reihenfolge von Funktion und Rolle in selbst generierten Namen geändert:
 
-- if false: "Room function", e.g. "Living room dimmer"
-- if true: "Function room", e.g. "Dimmer living room"
+- deaktiviert : "Raum Funktion", Beispiel: "Wohnzimmer Dimmer"
+- aktiviert: "Funktion Raum", Beispiel: "Dimmer Wohnzimmer"
 
 ### Verbinde Raum und Funktion mit
-Sie können das Wort definieren, das zwischen Funktion und Raum platziert wird. Z.B. "In" und von "Dimmer Wohnzimmer" wird "Dimmer im Wohnzimmer" sein.
+Hier kann ein Wort definiert werden, das zwischen Funktion und Raum platziert wird. Mit eingesetzem "im" wird aus "Dimmer Wohnzimmer" "Dimmer im Wohnzimmer".
 
 Dies wird jedoch nicht empfohlen, da die Erkennungs-Engine ein weiteres Wort analysieren muss und dies zu Missverständnissen führen kann.
 
@@ -45,16 +40,16 @@ Dies wird jedoch nicht empfohlen, da die Erkennungs-Engine ein weiteres Wort ana
 Erklärung fehlt
 
 ### Aus-Pegel für Schalter
-Einige Gruppen bestehen aus gemischten Geräten: Dimmern und Schaltern. Sie können mit den Befehlen "EIN" und "AUS" und mit Prozenten gesteuert werden. Wenn der Befehl "Set to 30%" und der * OFF-Pegel "30%" ist, werden die Schalter eingeschaltet. Mit dem Befehl "Set to 25%" werden alle Schalter ausgeschaltet.
+Einige Gruppen haben unterschiedliche Geräten: z.B. Dimmer und Schalter. Diese können mit den Befehlen "EIN" und "AUS" oder auch mit Prozentwerten gesteuert werden. Wenn der Befehl "Setze auf 30%" lautet und der Aus-Pegel auf "30%" eingestellt ist, werden die Schalter eingeschaltet. Mit dem Befehl "Setze auf 25%" werden alle Schalter ausgeschaltet die Dimmer werden auf 25% gesetzt, bleiben also an.
 
-Wenn der Befehl "OFF" ist, speichert der Adapter außerdem den aktuellen Dimmerpegel, wenn der tatsächliche Wert über oder gleich "30%" ist.
-Später, wenn der neue "EIN" -Befehl kommt, schaltet der Adapter den Dimmer nicht auf 100%, sondern auf den Pegel im Speicher.
+Mit dem Befehl "AUS" speichert der Adapter außerdem den aktuellen Dimmerpegel, wenn der tatsächliche Wert über oder gleich "30%" ist .
+Mit einem neuen "EIN"-Befehl schaltet der Adapter einen Dimmer nicht auf 100%, sondern auf den gespeicherten Pegel.
 
 Beispiel:
 
-- Assume, that *OFF level* is 30%.
-- Virtual device "Light" has two physical devices: *switch* and *dimmer*.
-- Command: "set the light to 40%". The adapter will remember this value for *dimmer*, will set it for "dimmer" and will turn the *switch* ON.
+- Angenommen, der Aus-Pegel steht auf 30%.
+- Ein virtuelles Gerät "Licht" hat zwei physische Geräte: *Schalter* und *Dimmer*.
+- Mit dem Befehl: "Setze das Licht auf 40%" wird dieser Wert gespeichert für den *Dimmer*, setzt den "Dimmer" auf diesen Wert und schaltet den  *Schalter* ein.
 - Command: "turn the light off". The adapter will set the *dimmer* to 0% and will turn off the *switch*.
 - Command: "turn on the light". *dimmer* => 40%, *switch* => ON.
 - Command: "set the light to 20%". *dimmer* => 20%, *switch* => OFF. The value for dimmer will not be remembered, because it is bellow *OFF level*.
