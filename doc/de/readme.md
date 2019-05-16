@@ -145,11 +145,11 @@ Wenn eine Gruppe nur einen Status hat, kann sie umbenannt werden, da hierfür de
 
 Wenn die Gruppe mehr als einen Status hat, muss die Gruppe über die Namen der Aufzählung umbenannt werden.
 
-Um eigene Gruppen zu erstellen, kann der "Szenen-Adapter" installieren werden oder ein "Skript" im Javascript-Adapter erstellt werden.
+Um eigene Gruppen zu erstellen, kann der "Szenen-Adapter" installiert werden oder ein "Skript" im Javascript-Adapter erstellt werden.
 
 
 ## Helper states
-- **smart.lastObjectID**: This state will be set if only one device was controlled by home skill (alexa, google home).
+- **smart.lastObjectID**: Dieser Status wird festgelegt, wenn nur ein Gerät vom Heim-Skill (alexa, google home) gesteuert wurde.
 - **smart.lastFunction**: Function name (if exists) for which last command was executed.
 - **smart.lastRoom**:     Room name (if exists) for which last command was executed.
 - **smart.lastCommand**:  Last executed command. Command can be: true(ON), false(OFF), number(%), -X(decrease at x), +X(increase at X)
