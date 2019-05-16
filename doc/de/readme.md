@@ -1,7 +1,5 @@
 ![Logo](media/cloud.png)
 # ioBroker cloud adapter
-=================
-
 Dieser Adapter ermöglicht die Verbindung vom Internet über die ioBroker-Cloud zur lokalen Installation von ioBroker.
 
 ## Einstellungen
