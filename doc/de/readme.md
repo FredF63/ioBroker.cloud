@@ -4,9 +4,13 @@ Dieser Adapter ermöglicht die Verbindung vom Internet über die ioBroker-Cloud 
 
 ## Einstellungen
 ### APP-KEY
-Um den Cloud-Adapter verwenden zu können, muss zunächst ein Account unter [https://iobroker.net](https://iobroker.net) erstellt werden. Über Edit Profile dann den APP-Key kopieren und hier eintragen.
+Um den Cloud-Adapter verwenden zu können, muss zunächst ein Account unter [https://iobroker.net](https://iobroker.net) erstellt werden.
 
 ![Intro](media/intro.png)
+
+Über Edit Profile dann den APP-Key kopieren und hier eintragen.
+
+![Einstellungen]/media/Einstellungen.PNG
 
 ### Instanz
 Alle Anfragen des Cloud-Adapter werden an eine WEB-Instanz weitergeleitet. Der Benutzer muss hier die WEB-Instanz (meist web.0) angeben, die dem Benutzer angezeigt wird, wenn er sich auf der Website https://iobroker.net anmeldet.
