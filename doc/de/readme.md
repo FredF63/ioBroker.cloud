@@ -1,11 +1,6 @@
-![Logo](admin/cloud.png)
+![Logo](media/cloud.png)
 # ioBroker cloud adapter
 =================
-
-![Number of Installations](http://iobroker.live/badges/cloud-installed.svg) ![Number of Installations](http://iobroker.live/badges/cloud-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.cloud.svg)](https://www.npmjs.com/package/iobroker.cloud)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.cloud.svg)](https://www.npmjs.com/package/iobroker.cloud)
-
-[![NPM](https://nodei.co/npm/iobroker.cloud.png?downloads=true)](https://nodei.co/npm/iobroker.cloud/)
 
 Dieser Adapter ermöglicht die Verbindung vom Internet über die ioBroker-Cloud zur lokalen Installation von ioBroker.
 
