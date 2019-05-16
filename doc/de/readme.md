@@ -117,28 +117,27 @@ Der Adapter versucht, virtuelle Geräte für die Smart Home-Steuerung zu generie
 Dafür gibt es zwei wichtige Aufzählungen: Räume und Funktionen.
 
 Räume sind z.B: Wohnzimmer, Bad, Schlafzimmer.
+
 Funktionen sind z.B.: Licht, Jalousie, Heizung.
-Following conditions must be met to get the state in the automatically generated list:
 
-- the state must be in some "function" enumeration.
-- the state must have role ("state", "switch" or "level.*", e.g. level.dimmer) if not directly included into "functions".
-It can be that the channel is in the "functions", but state itself not.
-- the state must be writable: common.write = true
-- the state dimmer must have common.type as 'number'
-- the state heating must have common.unit as '°C', '°F' or '°K' and common.type as 'number'
+Folgende Bedingungen müssen erfüllt sein, um einen Objektstatus automatisch in die Liste aufzunehmen:
 
-If the state is only in "functions" and not in any "room", the name of state will be used.
+- Der Objektstatus muss in der Aufzählung "Funktion" enthalten sein.
+- Der Zustand muss eine Rolle haben ("state", "switch" oder "level.*",  z.B. level.dimmer), wenn er nicht direkt in "Funktion" enthalten ist. Es ist möglich, dass der Kanal sich in "Funktion" befindet, der Objektstatus selbst aber nicht.
+- Der Objektstatus muss beschreibbar sein: common.write = true.
+- Der Objektstatus eines Dimmer muss common.type = 'number' sein.
+- Der Obkjetstatus Heizung muss als common.unit in '°C', '°F' or '°K' und der common.type als 'number' beschrieben sein.
 
-The state names will be generated from function and room. E.g. all *lights* in the *living room* will be collected in the virtual device *living room light*.
-The user cannot change this name, because it is generated automatically.
-But if the enumeration name changes, this name will be changed too. (e.g. function "light" changed to "lights", so the *living room light* will be changed to *living room lights*)
+Befindet sich der Objektstatus nur in "Funktion" und nicht in einem "Raum", wird der Name des Objektstatus verwendet.
 
-All the rules will be ignored if the state has common.smartName. In this case just the smart name will be used.
+Die Zustandsnamen werden aus Funktion und Raum generiert. Z.B. werden alle *Lichter* im *Wohnzimmer* im virtuellen Gerät als *Wohnzimmerlichter* generiert. Da er automatisch generiert wird kann der Benutzer diesen Namen nicht ändern. Jedoch wird der Aufzählungsname geändert, ändert sich auch der Name des virtuellen Geräts. (z.B. ändert sich die Funktion "Licht" in "Lichter", ändert sich *Wohnzimmerlichter* in *Wohnzimmerlichter*)
 
-if *common.smartName* is **false**, the state or enumeration will not be included into the list generation.
+Alle diese Bedingungen werden ignoriert, wenn der Objektstatus den Wert common.smartName hat. In diesem Fall wird nur der Smart Name verwendet.
 
-The configuration dialog lets comfortable remove and add the single states to virtual groups or as single device.
-![Configuration](img/configuration.png)
+Falls der Wert von *common.smartName* **false** ist, wird der Objektstatus nicht bei der Listengenerierung berücksichtigt.
+
+Über den Konfigurationsdialog können die einzelnen Objektstati bequem über das + Zeichen zu virtuellen Gruppen oder als einzelnes Gerät hinzufügt werden. Löschen erfolt über den Papierkorb rechts. Ein Smartname kann mit dem Bleistift geändert werden.
+![Smartgeräte](media/smartgeräte.PNG)
 
 If the group has only one state it can be renamed, as for this the state's smartName will be used.
 If the group has more than one state, the group must be renamed via the enumeration's names.
