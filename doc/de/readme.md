@@ -53,8 +53,8 @@ Mit einem neuen "EIN"-Befehl schaltet der Adapter einen Dimmer nicht auf 100%, s
 
 Beispiel:
 
-- Angenommen, der Aus-Pegel steht auf 30%.
-- Ein virtuelles Gerät "Licht" hat zwei physische Geräte: *Schalter* und *Dimmer*.
+Der Aus-Pegel steht auf 30% und ein virtuelles Gerät "Licht" hat zwei physische Geräte: *Schalter* und *Dimmer*.
+
 - Mit dem Befehl "Setze das Licht auf 40%" wird dieser Wert für den *Dimmer* gespeichert, setzt den "Dimmer" auf diesen Wert und schaltet den *Schalter* ein.
 - Mit dem Befehl "Schalte das Licht aus" wird der *Dimmer* auf 0% gesetzt und der *Schalter* wird ausgeschaltet.
 - Befehl: "Schalte das Licht ein". *Dimmer* => 40%, *Schalter* => Ein.
@@ -148,12 +148,12 @@ Wenn die Gruppe mehr als einen Status hat, muss die Gruppe über die Namen der A
 Um eigene Gruppen zu erstellen, kann der "Szenen-Adapter" installiert werden oder ein "Skript" im Javascript-Adapter erstellt werden.
 
 
-## Helper states
+## Hilfszustände
 - **smart.lastObjectID**: Dieser Status wird festgelegt, wenn nur ein Gerät vom Heim-Skill (alexa, google home) gesteuert wurde.
-- **smart.lastFunction**: Function name (if exists) for which last command was executed.
-- **smart.lastRoom**:     Room name (if exists) for which last command was executed.
-- **smart.lastCommand**:  Last executed command. Command can be: true(ON), false(OFF), number(%), -X(decrease at x), +X(increase at X)
-- **smart.lastResponse**: Textual response on command. It can be sent to some text2speech (sayit) engine.
+- **smart.lastFunction**: Funktionsname (wenn vorhanden) für welchen der letzte Befehl ausgeführt wurde.
+- **smart.lastRoom**:     Raum Name (wenn vorhanden) für welchen der letzte Befehl ausgeführt wurde.
+- **smart.lastCommand**: Zuletzt ausgeführter Befehl. Ein Befehl kann sein: true(Ein), false(Aus), number(%), -X(verkleinert um x), +X(vergrößert um X)
+- **smart.lastResponse**: Textantwort auf letzten Befehl. Kann an eine text2speech (sayit) Engine gesendet werden.
 
 
 
